@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/*RESET*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "PlayFair Display", sans-serif;
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  outline-color: none;
+  border: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a:any-link {
+  color: white;
+  text-decoration: none;
+}
+
+:root{
+    --MAIN-COLOR:#6A3BA7;
+    --TEXT-COLOR:#fff;
+}
+
+.tittle{
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+}
+.tittle h1{
+    font-size: 2.5rem;
+    font-weight: light;
+}
+/*MAIN CODE*/
+
+header{
+    width: 100%;
+    height: auto;
+    padding: 1.4rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--MAIN-COLOR);
+    color: var(--TEXT-COLOR);
+}
+
+header h1{
+    font-size: 2.35rem;
+}
+
+header nav ul{
+    display: flex;
+    gap: 3.5rem;
+}
+
+header nav ul li a{
+    font-size: 1.2rem;
+    position: relative;
+}
+
+header nav ul li a::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 37px;
+    background: var(--TEXT-COLOR);
+    transform: scale(0,1);
+    transition: all 0.2s ease-out;
+}
+
+header nav ul li a:hover::after{
+    transform: scale(1,1);
+}
+
+header nav ul .active a:after{
+    transform: scale(1,1);
+}
+
+#Front-page{
+    background-image: url(Background-img.png);
+    background-position: center;
+    width: 100%;
+    height: 88.6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 2.5rem;
+    z-index: -1000;
+}
+
+#Front-page article,
+#Front-page form{
+    transform: translateY(-115px);
+}
+
+#Front-page article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    z-index: 1000;
+}
+
+#Front-page article h1{
+    font-size: 3.5rem;
+}
+
+#Front-page article p{
+    font-size: 1.5rem;
+}
+
+#Front-page form{
+    display: flex;
+    gap: 0.2rem;
+}
+
+#Front-page form input{
+    padding: 10px;
+    width: 330px;
+    border: 1.8px solid var(--MAIN-COLOR);
+    font-size: 1.3rem;
+    border-radius: 6px;
+}
+
+#Front-page form button{
+    padding: 10px;
+    width: 145px;
+    height: 47px;
+    border: 1.8px solid var(--MAIN-COLOR);
+    font-size: 1.17rem;
+    border-radius: 6px;
+    color: var(--MAIN-COLOR);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.6s;
+    background: transparent;
+}
+
+#Front-page form button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    height: inherit;
+    width: 0;
+    background: var(--MAIN-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+    transform: skew(-20deg);
+}
+  
+#Front-page form button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 145PX;
+    background: var(--TEXT-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+}
+  
+#Front-page form button:hover {
+    color: white;
+}
+  
+#Front-page form button:hover::after {
+    width: 165px;
+}
+
+#Cards-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    width: 100%;
+    gap: 3rem;
+}
+
+#Cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    width: 100%;
+    gap: 2rem;
+}
+
+#Cards section{
+    width: 370px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 2.4rem;
+    text-align: center;
+    gap: 2rem;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid #6A3BA7;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.116);
+}
+
+#Cards section article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+#Cards section article h3{
+    font-size: 1.6rem;
+}
+
+#Cards section article p{
+    font-size: 1.23rem;
+}
+
+.tracker {
+    display: flex;
+    gap: 0.5rem;
+    transform: translateY(-250%);
+}
+  
+.tracker li {
+    height: 20px;
+    width: 20px;
+    background: #6a3ba762;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+  
+.tracker li.active {
+    transform: scale(1.2);
+    background: #6A3BA7;
+}
+
+#About-sect .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+#About-sect .container article{
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#About-sect .container article p{
+    font-size: 1.1rem;
+}
+
+#About-sect .container figure img{
+    width: 600px;
+    height: 860px;
+}
+
+#About-sect .container .objectives{
+    background: #bbbbbb80;
+    width: 640px;
+    height: 500px;
+    margin: 1rem;
+    margin-left: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.16);
+    gap: 4rem;
+}
+
+#About-sect .container .objectives h2{
+    font-size: 2rem;
+}
+
+@media screen and (max-width:800px){
+    #About-sect .container {
+        flex-direction: column;
+    }
+    #About-sect .container article p{
+        width: 700px;
+        text-align: center;
+    }
+    #About-sect .container figure{
+        text-align: center;
+    }
+}
+
+.spans{
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.spans span{
+    font-size: 1.5rem;
+}
+
+#Faq{
+    width: 100%;
+    min-height: 85vh;
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#Faq section{
+    width: 100%;
+    border: 1px solid #6A3BA7;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.116);
+    padding: 1.5rem;
+    padding-top: 0.6rem;
+    border-left: 10px solid #6A3BA7;
+    overflow: hidden;
+    height: 80px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all 0.19s ease-out;
+}
+
+#Faq section.active{
+    height: 200px;
+}
+
+#Faq section p{
+    font-size: 1.3rem;
+}
+
+#Faq section article{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+#Faq section article h3{
+    font-size: 1.7rem;
+    font-weight: lighter;
+}
+
+#Faq section article .icon{
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.19s ease-out;
+}
+
+.icon.active{
+    transform: rotate(225deg);
+}
+
+
+#Info-asker{
+    width: 100%;
+    min-height: 75vh;
+}
+
+#Info-asker form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#Info-asker form input,
+#Info-asker form textarea{
+    border: 1px solid #6A3BA7;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.116);
+}
+
+#Info-asker .input-boxes{
+    display: flex;
+    gap: 1.5rem;
+}
+
+#Info-asker form input{
+    padding: 10px;
+    width: 330px;
+    font-size: 1.3rem;
+    border-radius: 6px;
+}
+
+#Info-asker form textarea{
+    width: 684px;
+    font-size: 1.3rem;
+    border-radius: 6px;
+}
+
+#Info-asker form button{
+    padding: 10px;
+    width: 165px;
+    height: 47px;
+    border: 1.8px solid var(--MAIN-COLOR);
+    font-size: 1.17rem;
+    border-radius: 6px;
+    color: var(--MAIN-COLOR);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s;
+    background: transparent;
+    margin-top: 1.5rem;
+}
+
+#Info-asker form button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    height: inherit;
+    width: 0;
+    background: var(--MAIN-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+    transform: skew(-20deg);
+}
+  
+#Info-asker form button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 165px;
+    background: var(--TEXT-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+}
+  
+#Info-asker form button:hover {
+    color: white;
+}
+  
+#Info-asker form button:hover::after {
+    width: 180px;
+}
+
+
+footer{
+    background: var(--MAIN-COLOR);
+    color: var(--TEXT-COLOR);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+footer .tittle-styler h1{
+    font-size: 1.9rem;
+    transform: translateX(20px);
+}
+
+footer .tittle-styler .styler{
+    background: var(--TEXT-COLOR);
+    height: 2.4px;
+    border-radius: 10px;
+    width: 80px;
+    margin: 10px 10px 10px 20px;
+}
+
+footer article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+footer article h1{
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+footer .main-footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer article figure{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+footer article figure img{
+    width: 35px;
+    cursor: pointer;
+}
+
+footer article figure figcaption{
+    font-size: 1.3rem;
+}
+
+footer .main-footer ul{
+    list-style-type: disc;
+    display: flex;
+    flex-direction:column;
+    gap: 1.7rem;
+}
+
+footer .main-footer ul li{
+    font-size: 1.3rem;
+}
+
+footer .sub-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    align-items: center;
+}
+
+footer .sub-footer article p{
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+footer .sub-footer article ul{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+footer .sub-footer article ul li{
+    font-size: 1.15rem;
+    transition: all 0.2s ease;
+}
+
+footer .sub-footer article ul li:first-child{
+    border-right: 2px solid white;
+    padding-right: 1.5rem;
+}
+
+footer .sub-footer article ul li:hover{
+    text-decoration: underline;
+}
