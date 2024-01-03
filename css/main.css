@@ -50,7 +50,7 @@ a:any-link {
 header{
     width: 100%;
     height: auto;
-    padding: 1.4rem 5rem;
+    padding: 1.4rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,7 +64,7 @@ header h1{
 
 header nav ul{
     display: flex;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 
 header nav ul li a{
@@ -92,6 +92,87 @@ header nav ul .active a:after{
     transform: scale(1,1);
 }
 
+header img{
+    width: 40px;
+    display: none;
+}
+
+.responsive{
+    display: none;
+}
+
+@media screen and (max-width:620px){
+    #navbar{
+        display: none;
+    }
+    header img{
+        display: block;
+        cursor: pointer;
+    }
+    .responsive{
+        display: block;
+        position: fixed;
+        right: 0;
+        transform: translateX(100%);
+        z-index:1000;
+        transition: all ease-in-out 0.3s;
+    }
+    .responsive ul img{
+        position: relative;
+        top: -17%;
+        left: 45%;
+        width: 30px;
+    }
+    .responsive.active{
+        transform: translateX(0);
+    }
+    .responsive ul{
+        justify-content: center;
+        margin-top: 110%;
+        margin-left: 40%;
+        height: 150vh;
+        background: var(--MAIN-COLOR);
+        width: 500px;
+        gap: 2px;
+        flex-direction: column;
+        z-index: 1000;
+    }
+    .responsive ul li{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom:1px solid;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .responsive ul li a::after{
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        left: 0;
+        top: 37px;
+        background: var(--TEXT-COLOR);
+        transform: scale(0,1);
+        transition: all 0.2s ease-out;
+    }
+    .side-bar-blur{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        display: none;
+    }
+    .side-bar-blur.blured{
+        display: block;
+    }
+    #Front-page form button.active{
+        z-index: -1;
+    }
+}
+
 #Front-page{
     background-image: url(Background-img.png);
     background-position: center;
@@ -107,16 +188,10 @@ header nav ul .active a:after{
     z-index: -1000;
 }
 
-#Front-page article,
-#Front-page form{
-    transform: translateY(-115px);
-}
-
 #Front-page article{
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
-    z-index: 1000;
 }
 
 #Front-page article h1{
@@ -152,6 +227,7 @@ header nav ul .active a:after{
     position: relative;
     transition: all 0.6s;
     background: transparent;
+    transform: translate(0);
 }
 
 #Front-page form button::after {
@@ -265,10 +341,8 @@ header nav ul .active a:after{
 }
 
 #About-sect .container article{
-    width: 900px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 
 #About-sect .container article p{
@@ -298,16 +372,19 @@ header nav ul .active a:after{
     font-size: 2rem;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:1000px){
     #About-sect .container {
         flex-direction: column;
     }
     #About-sect .container article p{
-        width: 700px;
         text-align: center;
     }
     #About-sect .container figure{
         text-align: center;
+    }
+    #About-sect .container .objectives{
+        margin: 2rem;
+        margin-left: 3.3rem;
     }
 }
 
@@ -474,7 +551,6 @@ footer{
 
 footer .tittle-styler h1{
     font-size: 1.9rem;
-    transform: translateX(20px);
 }
 
 footer .tittle-styler .styler{
@@ -520,7 +596,7 @@ footer .main-footer ul{
     list-style-type: disc;
     display: flex;
     flex-direction:column;
-    gap: 1.7rem;
+    gap: 1.5rem;
 }
 
 footer .main-footer ul li{
@@ -531,6 +607,7 @@ footer .sub-footer{
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -540,22 +617,46 @@ footer .sub-footer article p{
     font-weight: lighter;
 }
 
-footer .sub-footer article ul{
+footer .sub-footer ul{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
-footer .sub-footer article ul li{
+footer .sub-footer ul li{
     font-size: 1.15rem;
     transition: all 0.2s ease;
 }
 
-footer .sub-footer article ul li:first-child{
+footer .sub-footer ul li:first-child{
     border-right: 2px solid white;
     padding-right: 1.5rem;
 }
 
-footer .sub-footer article ul li:hover{
+footer .sub-footer ul li:hover{
     text-decoration: underline;
+}
+
+@media screen and (max-width:700px){
+    footer .main-footer{
+        flex-direction: column;
+    }
+    footer .main-footer article{
+        overflow: hidden;
+        height: 80px; 
+    }
+    footer .main-footer article:first-child{
+        border-bottom: 1px solid var(--TEXT-COLOR);
+    }
+    footer .main-footer article:last-child{
+        padding-top: 1.2rem;
+    }
+    footer .sub-footer{
+        flex-direction: column;
+    }
+    footer .sub-footer ul{
+        gap: 10px;
+    }
 }
