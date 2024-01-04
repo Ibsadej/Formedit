@@ -22,3 +22,13 @@ menu1.onclick = ()=>{
     responsivness.classList.toggle("active");
     blure.classList.toggle("blured")
 }
+
+const caretBtn = document.querySelectorAll(".caret-btn");
+
+caretBtn.forEach((caret)=>{
+    const text = caret.parentElement.parentElement.parentElement;
+    caret.onclick = ()=>{
+        text.classList.toggle("active")
+        caret.classList.toggle("clicked")
+    }
+})

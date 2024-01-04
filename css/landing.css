@@ -1,0 +1,484 @@
+#Front-page{
+    background-image: url(Background-img.png);
+    background-position: center;
+    width: 100%;
+    height: 88.6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 2.5rem;
+    z-index: -1000;
+}
+
+#Front-page article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+#Front-page article h1{
+    font-size: 3.5rem;
+}
+
+#Front-page article p{
+    font-size: 1.5rem;
+}
+
+#Front-page form{
+    display: flex;
+    gap: 0.2rem;
+}
+
+#Front-page form input{
+    padding: 10px;
+    width: 330px;
+    border: 1.8px solid var(--MAIN-COLOR);
+    font-size: 1.3rem;
+    border-radius: 6px;
+}
+
+#Front-page form button{
+    padding: 10px;
+    width: 145px;
+    height: 47px;
+    border: 1.8px solid var(--MAIN-COLOR);
+    font-size: 1.17rem;
+    border-radius: 6px;
+    color: var(--MAIN-COLOR);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.6s;
+    background: transparent;
+    transform: translate(0);
+}
+
+#Front-page form button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    height: inherit;
+    width: 0;
+    background: var(--MAIN-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+    transform: skew(-20deg);
+}
+  
+#Front-page form button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 145px;
+    background: var(--TEXT-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+}
+  
+#Front-page form button:hover {
+    color: white;
+}
+  
+#Front-page form button:hover::after {
+    width: 165px;
+}
+
+@media screen and (max-width:850px){
+    #Front-page article h1{
+        font-size: 2.7rem;
+    }
+    
+    #Front-page article p{
+        font-size: 1rem;
+    }
+    #Front-page form input{
+        width: 240px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    #Front-page form button{
+        width: 100px;
+        font-size: 0.8rem;
+        height: 40px;
+    }
+}
+
+#Cards-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    width: 100%;
+    gap: 3rem;
+}
+
+#Cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+    width: 100%;
+    gap: 2rem;
+}
+
+#Cards section{
+    width: 370px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 2.4rem;
+    text-align: center;
+    gap: 2rem;
+    border-radius: 10px;
+    align-items: center;
+    border: 1px solid #6A3BA7;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.116);
+}
+
+#Cards section article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+#Cards section article h3{
+    font-size: 1.6rem;
+}
+
+#Cards section article p{
+    font-size: 1.23rem;
+}
+
+.tracker {
+    display: flex;
+    gap: 0.5rem;
+    transform: translateY(-250%);
+}
+  
+.tracker li {
+    height: 20px;
+    width: 20px;
+    background: #6a3ba762;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+  
+.tracker li.active {
+    transform: scale(1.2);
+    background: #6A3BA7;
+}
+
+@media screen and (max-width:700px){
+    #Cards section article h3{
+        font-size: 1.3rem;
+    }
+    #Cards section article p{
+        font-size: 1rem;
+    }
+}
+
+#About-sect .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+#About-sect .container article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#About-sect .container article p{
+    font-size: 1.1rem;
+}
+
+#About-sect .container figure img{
+    width: 600px;
+    height: 860px;
+}
+
+#About-sect .container .objectives{
+    background: #bbbbbb80;
+    width: 500px;
+    height: 470px;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.16);
+    gap: 4rem;
+}
+
+#About-sect .container .objectives h2{
+    font-size: 2rem;
+}
+
+.spans{
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.spans span{
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width:1000px){
+    #About-sect .container {
+        flex-direction: column;
+    }
+    #About-sect .container article p{
+        text-align: center;
+    }
+    #About-sect .container figure{
+        text-align: center;
+    }
+    #About-sect .container .objectives{
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width:700px){
+    #About-sect .container .objectives{
+        margin: 3rem;
+        width: 500px;
+        height: 360px;
+    }
+    #About-sect .container figure img{
+        width: 460px;
+        height: 560px;
+    }
+}
+
+@media screen and (max-width:550px){
+    #About-sect .container .objectives{
+        margin: 0.6rem;
+        width: 360px;
+    }
+    #About-sect .container figure img{
+        width: 350px;
+        height: 420px;
+    }
+    .spans span{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width:400px){
+    #About-sect .container .objectives{
+        margin: 0.6rem;
+        width: 300px;
+    }
+    #About-sect .container figure img{
+        width: 310px;
+        height: 400px;
+    }
+    .spans span{
+        font-size: 1rem;
+    }
+}
+
+#Faq{
+    width: 100%;
+    min-height: 85vh;
+    padding: 0 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#Faq section{
+    width: 100%;
+    border: 1px solid #6A3BA7;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.116);
+    padding: 1.5rem;
+    padding-top: 0.6rem;
+    border-left: 10px solid #6A3BA7;
+    overflow: hidden;
+    height: 80px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all 0.19s ease-out;
+}
+
+#Faq section.active{
+    height: 260px;
+}
+
+#Faq section p{
+    font-size: 1.3rem;
+}
+
+#Faq section article{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+#Faq section article h3{
+    font-size: 1.7rem;
+    font-weight: lighter;
+}
+
+#Faq section article .icon{
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.19s ease-out;
+}
+
+.icon.active{
+    transform: rotate(225deg);
+}
+
+@media screen and (max-width:800px){
+    #Faq section article h3{
+        font-size: 1.2rem;
+    }
+    #Faq section.active{
+        height: 280px;
+    }  
+}
+
+@media screen and (max-width:600px){
+    #Faq section.active{
+        height: 395px;
+    }    
+}
+
+#Info-asker{
+    width: 100%;
+    min-height: 80vh;
+}
+
+#Info-asker form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+#Info-asker form input,
+#Info-asker form textarea{
+    border: 1px solid #6A3BA7;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.116);
+}
+
+#Info-asker .input-boxes{
+    display: flex;
+    gap: 1.5rem;
+}
+
+#Info-asker form input{
+    padding: 10px;
+    width: 280px;
+    font-size: 1.15rem;
+    border-radius: 6px;
+}
+
+#Info-asker form textarea{
+    width: 584px;
+    font-size: 1.3rem;
+    border-radius: 6px;
+}
+
+#Info-asker form button{
+    padding: 7px;
+    width: 140px;
+    height: 42px;
+    border: 1.8px solid var(--MAIN-COLOR);
+    border-radius: 6px;
+    color: var(--MAIN-COLOR);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.2s;
+    background: transparent;
+}
+
+#Info-asker form button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    height: inherit;
+    width: 0;
+    background: var(--MAIN-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+    transform: skew(-20deg);
+}
+  
+#Info-asker form button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: 165px;
+    background: var(--TEXT-COLOR);
+    transition: all 0.6s;
+    z-index: -1;
+}
+  
+#Info-asker form button:hover {
+    color: white;
+}
+  
+#Info-asker form button:hover::after {
+    width: 180px;
+}
+
+@media screen and (max-width:700px){
+    #Info-asker form input{
+        padding: 10px;
+        width: 247px;
+        font-size: 1.3rem;
+        border-radius: 6px;
+    }
+    #Info-asker form textarea{
+        width: 524px;
+        height: 300px;
+        font-size: 1.3rem;
+        border-radius: 6px;
+    }
+}
+
+@media screen and (max-width:700px){
+    #Info-asker form input{
+        width: 345px;
+        font-size: 1rem;
+        border-radius: 6px;
+    }
+    #Info-asker form textarea{
+        width: 345px;
+        height: 300px;
+        font-size: 1.3rem;
+        border-radius: 6px;
+    }
+    .input-boxes{
+        flex-direction: column;
+    }
+    #Info-asker form button{
+        padding: 10px;
+        width: 125px;
+        height: 35px;
+        font-size: 0.8rem;
+        margin: 1rem;
+    }
+}
