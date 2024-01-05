@@ -65,6 +65,7 @@ header h1{
 header nav ul{
     display: flex;
     gap: 3rem;
+    justify-self: flex-end;
 }
 
 header nav ul li a{
@@ -108,6 +109,7 @@ header img{
     header img{
         display: block;
         cursor: pointer;
+        z-index: 1000;
     }
     .responsive{
         display: block;
@@ -172,8 +174,51 @@ header img{
     #Front-page form button.active{
         z-index: -1;
     }
-    #Info-asker form button{
-        z-index:-1;
+    .menu-icon-container{
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        z-index: 1000;
+        position: fixed;
+        right: 5%;
+        background-color: var(--MAIN-COLOR);
+        padding: 10px;
+    }
+    .menu{
+        width: 42px;
+        height: 1.5px;
+        background:var(--TEXT-COLOR);
+        position: relative;
+        transition: all 0.14s ease-in-out;
+    }
+    .menu-icon-container.active .menu{
+        transform: rotate(-45deg);
+    }
+    .menu-icon-container.active .menu::after{
+        top: 0;
+        transform: rotate(-90deg);
+    }
+    .menu-icon-container.active .menu::before{
+        display: none;
+    }
+    .menu::after,
+    .menu::before{
+        content: "";
+        width: 40px;
+        height: 1.5px;
+        position: absolute;
+        background: var(--TEXT-COLOR);
+    }
+    .menu::after{
+        top: 10px;
+    }
+    .menu::before{
+        top: -10px;
     }
 }
 
@@ -333,6 +378,6 @@ footer .sub-footer ul li:hover{
         font-size: 1.5rem;
     }
     footer .tittle-styler img{
-        width: 30px;
+        width: 25px;
     }
 }

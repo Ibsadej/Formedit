@@ -241,6 +241,9 @@
     #About-sect .container {
         flex-direction: column;
     }
+    #About-sect .container article{
+        width: 100%;
+    }
     #About-sect .container article p{
         text-align: center;
     }
